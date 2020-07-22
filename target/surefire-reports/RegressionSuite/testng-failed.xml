@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [RegressionSuite]">
+  <listeners>
+    <listener class-name="com.hrms.testbase.Listener"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="RegressionTest(failed)">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
+    <classes>
+      <class name="com.hrms.testcases.ReportsDefinition">
+        <methods>
+          <include name="DefiningReport"/>
+          <include name="generateReport"/>
+          <include name="writeReport"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.hrms.testcases.ReportsDefinition -->
+    </classes>
+  </test> <!-- RegressionTest(failed) -->
+</suite> <!-- Failed suite [RegressionSuite] -->
