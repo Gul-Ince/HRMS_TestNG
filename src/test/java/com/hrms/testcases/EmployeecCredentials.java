@@ -15,6 +15,20 @@ public class EmployeecCredentials extends CommonMethods {
 	// should see “Required” message
 	// Note: first name and last name are required fields
 
+	
+	@Test(priority=1)
+	public void loginCredential() {
+		login.login();
+		dashboard.navigateEmpList();
+		
+	}
+	
+	
+	
+	
+	
+	
+	
 	@Test(priority = 1)
 	public void loginCredentials() {
 		login.login();

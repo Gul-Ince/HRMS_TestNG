@@ -34,25 +34,21 @@ public class ReportsDefinition extends CommonMethods {
 		wait(3);
 		scrollDown(250);
 
-//		@Test(groups = "regression", dataProvider = "getDataExcel")
-//		public void DefiningReport(String reportName, String selection, String selected, String fieldgroup,String displayfields) {
-//			test.info("Entering Valid Admin credentials");
-//			login.login();
-//			test.info("navigating to reports");
-//			dashboard.navigateToReports();
-//			test.info("defining 3 reports");
-//			reports.addReports.click();
-//			reports.reportName.sendKeys(reportName);
-//			selectDdValue(reports.selectioncriteria, selection);
-//			selectDdValue(reports.selectedcriteriainclude, selected);
-//			wait(3);
-//			selectDdValue(reports.displayFGroups, fieldgroup);
-//			selectDdValue(reports.displayFields, displayfields);
-//			reports.addDisplayField.click();
-//			reports.btnsave.click();
-//			scrollDown(250);
-//	
-	
+		/*
+		 * @Test(groups = "regression", dataProvider = "getDataExcel") public void
+		 * DefiningReport(String reportName, String selection, String selected, String
+		 * fieldgroup,String displayfields) {
+		 * test.info("Entering Valid Admin credentials"); login.login();
+		 * test.info("navigating to reports"); dashboard.navigateToReports();
+		 * test.info("defining 3 reports"); reports.addReports.click();
+		 * reports.reportName.sendKeys(reportName);
+		 * selectDdValue(reports.selectioncriteria, selection);
+		 * selectDdValue(reports.selectedcriteriainclude, selected); wait(3);
+		 * selectDdValue(reports.displayFGroups, fieldgroup);
+		 * selectDdValue(reports.displayFields, displayfields);
+		 * reports.addDisplayField.click(); reports.btnsave.click(); scrollDown(250);
+		 * 
+		 */
 	}
 
 	@DataProvider(name = "data")

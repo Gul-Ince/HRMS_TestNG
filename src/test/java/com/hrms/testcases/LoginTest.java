@@ -18,17 +18,17 @@ public class LoginTest extends CommonMethods {
 //		driver.close();
 //	}
 //	
-	@Test(groups="smoke")
+	@Test(groups = "smoke")
 	public void validAdminLogin() {
 		test.info("Entering Valid Admin credentials");
-		login.login();		
+		login.login();
 		String expectedUSer = "Welcome Admin";
 		String actualUser = dashboard.welcome.getText();
 		Assert.assertEquals(expectedUSer, actualUser, "Admin is not logged in");
 		Assert.assertTrue(expectedUSer.contains(ConfigsReader.getProperty("username")));
 	}
 
-	@Test(groups="smoke")
+	@Test(groups = "smoke")
 	public void InvalidPasswordAdminLogin() {
 		test.info("checking to see if error message appears");
 		sendText(login.username, ConfigsReader.getProperty("username"));
@@ -41,7 +41,7 @@ public class LoginTest extends CommonMethods {
 		Assert.assertTrue(actualMessage.equals(actualMessage), "Error Messages doesn't match");
 	}
 
-	@Test(groups="smoke")
+	@Test(groups = "smoke")
 	public void emptyUsername() {
 		sendText(login.password, ConfigsReader.getProperty("password"));
 		waitAndClick(login.loginBtn);

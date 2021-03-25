@@ -18,8 +18,8 @@ public class AddEmployeePageElements extends CommonMethods {
 
 	@FindBy(xpath = "//label[text()='Photograph']")
 	public WebElement photograph;
-	
-	@FindBy(xpath="//label[text()='Create Login Details']")
+
+	@FindBy(xpath = "//label[text()='Create Login Details']")
 	public WebElement createLogin;
 
 	@FindBy(id = "photofile")
@@ -30,75 +30,74 @@ public class AddEmployeePageElements extends CommonMethods {
 
 	@FindBy(id = "middleName")
 	public WebElement empMiddlename;
-	
+
 	@FindBy(id = "lastName")
 	public WebElement empLastname;
-	
+
 	@FindBy(id = "chkLogin")
 	public WebElement chkLoginDetails;
-	
-	@FindBy(id="user_name")
+
+	@FindBy(id = "user_name")
 	public WebElement userName;
-	
-	@FindBy(id="user_password")
+
+	@FindBy(id = "user_password")
 	public WebElement userPassword;
-	
-	@FindBy(id="re_password")
+
+	@FindBy(id = "re_password")
 	public WebElement confirmPassword;
-	
-	@FindBy(xpath="//div[@id='profile-pic']/h1")
+
+	@FindBy(xpath = "//div[@id='profile-pic']/h1")
 	public WebElement verifyEmp;
-	
-   @FindBy(id = "btnSave")
+
+	@FindBy(id = "btnSave")
 	public WebElement save;
-    
-	@FindBy(id="personal_txtEmployeeId")
+
+	@FindBy(id = "personal_txtEmployeeId")
 	public WebElement personalID;
-	
-	@FindBy (xpath="//div[@id='sidebar']/div/h1")
+
+	@FindBy(xpath = "//div[@id='sidebar']/div/h1")
 	public WebElement addedEmployee;
-    
-    @FindBy(xpath="//span[@for='firstName']")
-    public WebElement requiredfName;
-        
-    @FindBy(xpath="//span[@for='lastName']")
-    public WebElement requiredlName;
-    
-	@FindBy(id="status")
+
+	@FindBy(xpath = "//span[@for='firstName']")
+	public WebElement requiredfName;
+
+	@FindBy(xpath = "//span[@for='lastName']")
+	public WebElement requiredlName;
+
+	@FindBy(id = "status")
 	public WebElement status;
-	
-	
-	
-    
-    public AddEmployeePageElements() {
-		PageFactory.initElements(driver, this);	}
-	
-	public void employeeDetails(String fname, String lname ) {
-	
+
+	public AddEmployeePageElements() {
+		PageFactory.initElements(driver, this);
+	}
+
+	public void employeeDetails(String fname, String lname) {
+
 		sendText(empFirstname, fname);
-		sendText(empLastname,lname);
+		sendText(empLastname, lname);
 		sendText(uploadpic, ConfigsReader.getProperty("filepath"));
-	
-    }
-	public void CreateLogindetails( ) {
+
+	}
+
+	public void CreateLogindetails() {
 		chkLoginDetails.click();
-		sendText(userName,ConfigsReader.getProperty("usrName"));
-		sendText(userPassword,ConfigsReader.getProperty("usrPassWord"));
+		sendText(userName, ConfigsReader.getProperty("usrName"));
+		sendText(userPassword, ConfigsReader.getProperty("usrPassWord"));
 		sendText(confirmPassword, ConfigsReader.getProperty("usrPassWord"));
-        Select select= new Select (status);
+		Select select = new Select(status);
 		select.selectByVisibleText("Enabled");
 		save.click();
 	}
-	
-	public void CreateLogin(String usrName, String usrPswrd ) {
+
+	public void CreateLogin(String usrName, String usrPswrd) {
 		chkLoginDetails.click();
-		sendText(userName,usrName);
-		sendText(userPassword,usrPswrd);
+		sendText(userName, usrName);
+		sendText(userPassword, usrPswrd);
 		sendText(confirmPassword, usrPswrd);
-        Select select= new Select (status);
+		Select select = new Select(status);
 		select.selectByVisibleText("Enabled");
 		save.click();
-	
+
 	}
 
 }

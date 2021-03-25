@@ -10,10 +10,8 @@ import org.testng.annotations.Test;
 
 import com.hrms.utils.CommonMethods;
 
-public class Excelcomplex extends CommonMethods{
+public class Excelcomplex extends CommonMethods {
 
-   
-	
 	@Test(groups = "regression", dataProvider = "AllTestData")
 
 	public void DefiningReport(String reportName, String selection, String selected, String fieldgroup,
@@ -40,30 +38,20 @@ public class Excelcomplex extends CommonMethods{
 		reports.addDisplayField.click();
 		reports.btnsave.click();
 		scrollDown(250);
-	
-   }
 
-	
-	
-	
+	}
+
 	@DataProvider(name = "AllTestData")
-	public static Object[][] GetDataForEveryOne(ITestNGMethod testContext)
-	{
-	    if(testContext.getMethodName().equals("LoginWithMultipleUsersTest"))
-	    {
-	        String[][] usernamePassArray = { { "testType1", "pass1" },
-	                                         { "testType2", "pass1" }};
+	public static Object[][] GetDataForEveryOne(ITestNGMethod testContext) {
+		if (testContext.getMethodName().equals("LoginWithMultipleUsersTest")) {
+			String[][] usernamePassArray = { { "testType1", "pass1" }, { "testType2", "pass1" } };
 
-	        return usernamePassArray;
-	    }
-	    else if(testContext.getMethodName().equals("LoginWithMultipleDataTest"))
-	    {
-	        String[][] usernamePassArray = { { "user1", "pass1" },
-	                 { "user2", "pass2" },
-	                 { "user3", "pass3" } };
+			return usernamePassArray;
+		} else if (testContext.getMethodName().equals("LoginWithMultipleDataTest")) {
+			String[][] usernamePassArray = { { "user1", "pass1" }, { "user2", "pass2" }, { "user3", "pass3" } };
 
-	        return usernamePassArray;
-	    }
-	    return null;
+			return usernamePassArray;
+		}
+		return null;
 	}
 }
